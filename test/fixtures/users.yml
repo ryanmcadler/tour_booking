@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: ryanmcadler@gmail.com
+  welcome_token: KVQL65C2d4zB2kqKmasaFjiK
+
+two:
+  email: ryan+mcadler@gmail.com
+  welcome_token: xiDEGw67vaq8BwsqSkniF2TH
