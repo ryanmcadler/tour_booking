@@ -15,7 +15,7 @@
   <%= f.hidden_field :client_ip, value: request.remote_ip %>
 
   <div class="field">
-    <%= f.label :referrer %>
+    <%= f.label :referrer, "How did you learn about us?" %>
     <%= f.text_field :referrer %>
   </div>
 
@@ -24,7 +24,15 @@
     <%= f.date_select :tour_date %>
   </div>
 
+  <div class="field">
+    <% @user_tour_preference_interest_options.each do |option| %>
+      <div>
+        <%= check_box_tag "user_tour_preference[user_tour_preference_interests[]", option %> <%= option %>
+      </div>
+    <% end %>
+  </div>
+
   <div class="actions">
-    <%= f.submit "Book Tour" %>
+    <%= f.submit "Schedule Tour" %>
   </div>
 <% end %>

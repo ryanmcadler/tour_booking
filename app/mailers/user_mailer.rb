@@ -10,6 +10,8 @@ class UserMailer < ApplicationMailer
 
   def tour_booking_notification(user)
     @user = user
+    @user_contact_info = user.user_contact_info
+    @user_tour_preference = user.user_tour_preference
     mail(to: TourBooking::Application::TOUR_AGENT_EMAIL, subject: "#{TourBooking::Application::PROPERTY_NAME}: A New Tour Has Been Scheduled")
   end
 

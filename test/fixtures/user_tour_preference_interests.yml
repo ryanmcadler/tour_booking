@@ -2,8 +2,8 @@
 
 one:
   preference_id: 1
-  interest: pool
+  interest: Pool
 
 two:
   preference_id: 2
-  interest: rec room
+  interest: Rec Room

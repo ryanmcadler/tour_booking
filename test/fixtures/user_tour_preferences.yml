@@ -9,7 +9,7 @@ one:
 
 two:
   user_id: <%= User.last.id %>
-  referrer: MyString
+  referrer: Word of mouth
   tour_date: 2017-04-26
   client_ip: 216.228.176.68
   rating: 4

@@ -4,27 +4,27 @@
     <tbody>
       <tr>
         <td>Name:</td>
-        <td><%= @user.user_contact_info.first %> <%= @user.user_contact_info.last %></td>
+        <td><%= @user_contact_info.first %> <%= @user_contact_info.last %></td>
       </tr>
       <tr>
         <td>Phone:</td>
-        <td><%= @user.user_contact_info.phone %></td>
+        <td><%= @user_contact_info.phone %></td>
       </tr>
       <tr>
         <td>Referrer:</td>
-        <td><%= @user.user_tour_preference.referrer %></td>
+        <td><%= @user_tour_preference.referrer %></td>
       </tr>
       <tr>
         <td>Requested Tour Date:</td>
-        <td><%= @user.user_tour_preference.tour_date.strftime("%m/%d/%Y") %></td>
+        <td><%= @user_tour_preference.tour_date.strftime("%m/%d/%Y") %></td>
       </tr>
       <tr>
         <td>Interests:</td>
-        <td><%= @user.user_tour_preference.user_tour_preference_interests.collect(&:interest).join(", ") %></td>
+        <td><%= @user_tour_preference.user_tour_preference_interests.collect(&:interest).join(", ") %></td>
       </tr>
       <tr>
         <td>Client IP:</td>
-        <td><%= @user.user_tour_preference.client_ip %></td>
+        <td><%= @user_tour_preference.client_ip %></td>
       </tr>
     </tbody>
   </table>
