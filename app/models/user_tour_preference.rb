@@ -7,9 +7,9 @@ class UserTourPreference < ApplicationRecord
   validates :tour_date, date: { after: Proc.new { Date.today }, message: 'must be after today' }
   validates :rating, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 5 }, if: "rating.present?"
 
-  #after_create :send_notification_email
+  after_create :send_notification_email
 
   def send_notification_email
-    UserMailer.tour_booking_notification(self).deliver_now
+    UserMailer.tour_booking_notification(self.user).deliver_now
   end
 end
