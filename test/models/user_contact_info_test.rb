@@ -26,4 +26,16 @@ class UserContactInfoTest < ActiveSupport::TestCase
     assert_equal false, user_contact_infos(:one).valid?
   end
 
+  test "should be invalid without a valid phone" do
+    user_contact_infos(:one).phone = "55512"
+    assert user_contact_infos(:one).phone == "55512"
+    assert_equal false, user_contact_infos(:one).valid?
+  end
+
+  test "should be invalid without a valid phone 2" do
+    user_contact_infos(:one).phone = "abc123"
+    assert user_contact_infos(:one).phone == "abc123"
+    assert_equal false, user_contact_infos(:one).valid?
+  end
+
 end
