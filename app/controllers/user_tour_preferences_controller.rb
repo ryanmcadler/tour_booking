@@ -16,7 +16,6 @@ class UserTourPreferencesController < ApplicationController
 
   def create
     @user_tour_preference = UserTourPreference.new(user_tour_preference_params)
-    puts @user_tour_preference
     respond_to do |format|
       if @user_tour_preference.save
         #user_tour_preference_params["user_tour_preference_interests"].each do |option|

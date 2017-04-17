@@ -23,7 +23,6 @@ class UserTourPreferencesControllerTest < ActionDispatch::IntegrationTest
         }
       }
     end
-
     assert_redirected_to user_tour_preference_url(UserTourPreference.last)
   end
 
