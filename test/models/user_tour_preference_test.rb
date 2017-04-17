@@ -22,7 +22,6 @@ class UserTourPreferenceTest < ActiveSupport::TestCase
 
   test "should be invalid without a valid tour_date" do
     user_tour_preferences(:one).tour_date = "test"
-    assert user_tour_preferences(:one).tour_date == "test"
     assert_equal false, user_tour_preferences(:one).valid?
   end
 
