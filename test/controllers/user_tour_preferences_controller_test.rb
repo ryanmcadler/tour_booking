@@ -2,7 +2,9 @@ require 'test_helper'
 
 class UserTourPreferencesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    @user = users(:one)
     @user_tour_preference = user_tour_preferences(:one)
+    cookies[:welcome_token] = @user.welcome_token
   end
 
   test "should get new" do

@@ -1,9 +1,18 @@
 class UserContactInfosController < ApplicationController
 
-  #before_action :set_user, only: [:new]
+  before_action :authorize, only: [:create]
 
   def new
-    @user_contact_info = UserContactInfo.new
+    if params[:token].present?
+      cookies[:welcome_token] = params[:token]
+      if current_user
+        @user_contact_info = UserContactInfo.new
+      else
+        redirect_to root_url
+      end
+    else
+      redirect_to root_url
+    end
   end
 
   def create
@@ -21,20 +30,6 @@ class UserContactInfosController < ApplicationController
   end
 
   private
-
-    def set_user
-      user = User.find_by_welcome_token(params[:token])
-      if user.present?
-        session[:user] = user
-        #if user.user_contact_info.present?
-        #  redirect_to new_user_tour_preference_path
-        #elsif
-        #  redirect_to edit_user_tour_preference_path
-        #end
-      else
-        redirect_to root_url
-      end
-    end
 
     def user_contact_info_params
       params.require(:user_contact_info).permit(:user_id, :first, :last, :phone)
