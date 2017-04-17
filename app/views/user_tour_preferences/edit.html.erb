@@ -1,1 +1,29 @@
 <h1>Editing User Tour Preference</h1>
+
+<p>
+  <strong>Referrer:</strong>
+  <%= @user_tour_preference.referrer %>
+</p>
+
+<p>
+  <strong>Tour Date:</strong>
+  <%= @user_tour_preference.tour_date.strftime("%m/%d/%Y") %>
+</p>
+
+<% if @user_tour_preference.user_tour_preference_interests.any? %>
+  <p>
+    <strong>Interests:</strong>
+    <%= @user_tour_preference.user_tour_preference_interests.collect(&:interest).join(", ") %>
+  </p>
+<% end %>
+
+<%= form_for(@user_tour_preference) do |f| %>
+  <div class="field">
+    <%= f.label :rating, "On a level of 1-5, how would you rate this experience?" %>
+    <%= f.text_field :rating %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Rate Experience" %>
+  </div>
+<% end %>

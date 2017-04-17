@@ -37,4 +37,10 @@ class UserTourPreferenceTest < ActiveSupport::TestCase
     assert_equal false, user_tour_preferences(:one).valid?
   end
 
+  test "should be invalid without a valid rating" do
+    user_tour_preferences(:one).rating = 6
+    assert user_tour_preferences(:one).rating == 6
+    assert_equal false, user_tour_preferences(:one).valid?
+  end
+
 end

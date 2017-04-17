@@ -6,7 +6,13 @@ class UserContactInfosController < ApplicationController
     if params[:token].present?
       cookies[:welcome_token] = params[:token]
       if current_user
-        @user_contact_info = UserContactInfo.new
+        if current_user.user_contact_info.present? && !current_user.user_contact_info.present?
+          redirect_to new_user_tour_preference_path
+        elsif current_user.user_tour_preference.present?
+          redirect_to edit_user_tour_preference_path(current_user.user_tour_preference)
+        else
+          @user_contact_info = UserContactInfo.new
+        end
       else
         redirect_to root_url
       end

@@ -16,12 +16,12 @@ class UserTourPreferencesController < ApplicationController
 
   def create
     @user_tour_preference = UserTourPreference.new(user_tour_preference_params)
-
+    puts @user_tour_preference
     respond_to do |format|
       if @user_tour_preference.save
-        user_tour_preference_params[:user_tour_preference_interests].each do |option|
-          UserTourPreferenceInterest.create(preference_id: @user_tour_preference.id, interest: option)
-        end
+        #user_tour_preference_params["user_tour_preference_interests"].each do |option|
+        #  UserTourPreferenceInterest.create(preference_id: @user_tour_preference.id, interest: option)
+        #end
         format.html { redirect_to @user_tour_preference, notice: 'User tour preference was successfully created.' }
         format.json { render :show, status: :created, location: @user_tour_preference }
       else
