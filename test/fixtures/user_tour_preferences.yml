@@ -1,14 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 1
+  user_id: <%= User.first.id %>
   referrer: Google
   tour_date: 2017-04-16
   client_ip: 216.228.176.67
   rating: 1
 
 two:
-  user_id: 2
+  user_id: <%= User.last.id %>
   referrer: MyString
   tour_date: 2017-04-17
   client_ip: 216.228.176.68

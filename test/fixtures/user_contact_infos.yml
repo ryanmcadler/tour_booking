@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 1
+  user_id: <%= User.first.id %>
   first: Ryan
   last: McAdler
   phone: 15415551212
 
 two:
-  user_id: 2
+  user_id: <%= User.last.id %>
   first: Casey
   last: Gomez
   phone: 15413334444

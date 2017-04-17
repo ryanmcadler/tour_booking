@@ -28,7 +28,7 @@ class UserTourPreferencesController < ApplicationController
   def update
     respond_to do |format|
       if @user_tour_preference.update(user_tour_preference_params)
-        format.html { redirect_to @user_tour_preference, notice: 'User tour preference was successfully updated.' }
+        format.html { redirect_to root_url, notice: 'User tour preference was successfully updated.' }
         format.json { render :show, status: :ok, location: @user_tour_preference }
       else
         format.html { render :edit }
