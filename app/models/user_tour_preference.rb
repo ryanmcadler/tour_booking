@@ -1,0 +1,2 @@
+class UserTourPreference < ApplicationRecord
+end

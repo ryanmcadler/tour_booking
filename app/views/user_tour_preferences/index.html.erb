@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>User Tour Preferences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Referrer</th>
+      <th>Tour date</th>
+      <th>Client ip</th>
+      <th>Rating</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_tour_preferences.each do |user_tour_preference| %>
+      <tr>
+        <td><%= user_tour_preference.user_id %></td>
+        <td><%= user_tour_preference.referrer %></td>
+        <td><%= user_tour_preference.tour_date %></td>
+        <td><%= user_tour_preference.client_ip %></td>
+        <td><%= user_tour_preference.rating %></td>
+        <td><%= link_to 'Show', user_tour_preference %></td>
+        <td><%= link_to 'Edit', edit_user_tour_preference_path(user_tour_preference) %></td>
+        <td><%= link_to 'Destroy', user_tour_preference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User Tour Preference', new_user_tour_preference_path %>

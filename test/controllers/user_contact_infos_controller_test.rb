@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class UserContactInfosControllerTest < ActionDispatch::IntegrationTest
-  
+
   setup do
     @user_contact_info = user_contact_infos(:one)
   end
@@ -16,7 +16,7 @@ class UserContactInfosControllerTest < ActionDispatch::IntegrationTest
       post user_contact_infos_url, params: { user_contact_info: { first: @user_contact_info.first, last: @user_contact_info.last, phone: @user_contact_info.phone, user_id: @user_contact_info.user_id } }
     end
 
-    assert_redirected_to user_contact_info_url(UserContactInfo.last)
+    assert_redirected_to new_user_tour_preference_url(UserContactInfo.user_id)
   end
 
 end

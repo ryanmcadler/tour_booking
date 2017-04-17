@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @user_tour_preference.user_id %>
+</p>
+
+<p>
+  <strong>Referrer:</strong>
+  <%= @user_tour_preference.referrer %>
+</p>
+
+<p>
+  <strong>Tour date:</strong>
+  <%= @user_tour_preference.tour_date %>
+</p>
+
+<p>
+  <strong>Client ip:</strong>
+  <%= @user_tour_preference.client_ip %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @user_tour_preference.rating %>
+</p>
+
+<%= link_to 'Edit', edit_user_tour_preference_path(@user_tour_preference) %> |
+<%= link_to 'Back', user_tour_preferences_path %>
