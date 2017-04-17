@@ -25,6 +25,12 @@ class UserTourPreferenceTest < ActiveSupport::TestCase
     assert_equal false, user_tour_preferences(:one).valid?
   end
 
+  test "should be invalid without a tour_date that is after today" do
+    user_tour_preferences(:one).tour_date = Date.today
+    assert user_tour_preferences(:one).tour_date == Date.today
+    assert_equal false, user_tour_preferences(:one).valid?
+  end
+
   test "should be invalid without a client_ip" do
     user_tour_preferences(:one).client_ip = nil
     assert_nil user_tour_preferences(:one).client_ip

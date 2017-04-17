@@ -3,13 +3,13 @@
 one:
   user_id: <%= User.first.id %>
   referrer: Google
-  tour_date: 2017-04-16
+  tour_date: 2017-04-25
   client_ip: 216.228.176.67
   rating: 1
 
 two:
   user_id: <%= User.last.id %>
   referrer: MyString
-  tour_date: 2017-04-17
+  tour_date: 2017-04-26
   client_ip: 216.228.176.68
   rating: 4
