@@ -2,6 +2,7 @@ class UserContactInfosController < ApplicationController
 
   before_action :authorize, only: [:create]
 
+  # This method needs to be cleaned up to improve testability
   def new
     if params[:token].present?
       cookies[:welcome_token] = params[:token]

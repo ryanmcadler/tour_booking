@@ -7,9 +7,20 @@ class UserContactInfosControllerTest < ActionDispatch::IntegrationTest
     @user_contact_info = user_contact_infos(:one)
   end
 
-  test "should get new" do
+  test "should get new or redirect to correct form" do
     get new_user_contact_info_path(token: @user.welcome_token)
-    assert_response :success
+    current_user = @user
+    if current_user
+      if current_user.user_contact_info.present? && !current_user.user_contact_info.present?
+        assert_redirected_to new_user_tour_preference_path
+      elsif current_user.user_tour_preference.present?
+        assert_redirected_to edit_user_tour_preference_path(current_user.user_tour_preference)
+      else
+        assert_response :success
+      end
+    else
+      assert_redirected_to root_url
+    end
   end
 
   test "should create user_contact_info" do
