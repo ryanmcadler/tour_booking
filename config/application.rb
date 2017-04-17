@@ -11,5 +11,8 @@ module TourBooking
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    PROPERTY_NAME = "Serene Lakes"
+    TOUR_AGENT_EMAIL = "ryanmcadler@gmail.com"
   end
 end
