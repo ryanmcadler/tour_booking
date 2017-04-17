@@ -20,7 +20,7 @@
       </tr>
       <tr>
         <td>Interests:</td>
-        <td><%= @user_tour_preference.user_tour_preference_interests.collect(&:interest).join(", ") %></td>
+        <td><%= @user_tour_preference.user_tour_preference_interests.collect(&:interest).join(", ").to_s %></td>
       </tr>
       <tr>
         <td>Client IP:</td>
