@@ -6,4 +6,10 @@ class User < ApplicationRecord
 
   validates_presence_of :email
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }, if: "email.present?"
+
+  after_create :send_welcome_email
+
+  def send_welcome_email
+    UserMailer.welcome_email(self).deliver_now
+  end
 end

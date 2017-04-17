@@ -1,4 +1,5 @@
 class UserTourPreferencesController < ApplicationController
+
   before_action :set_user_tour_preference, only: [:show, :edit, :update]
 
   def show
