@@ -1,0 +1,5 @@
+<p>Welcome to <%= TourBooking::Application::PROPERTY_NAME %></p>
+<p>To book a tour, please click here:</p>
+<p><a href="<%= new_user_contact_info_url(@user.welcome_token) %>"><%= new_user_contact_info_url(token: @user.welcome_token) %></a></p>
+<p>Thank you,</p>
+<p style="text-align: right">The <%= TourBooking::Application::PROPERTY_NAME %> Team</a>
