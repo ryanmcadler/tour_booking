@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_one :user_contact_info
-  has_one :user_tour_preference
+  has_one :user_contact_info, dependent: :destroy
+  has_one :user_tour_preference, dependent: :destroy
 
   has_secure_token :welcome_token
 
