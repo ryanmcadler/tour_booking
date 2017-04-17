@@ -1,24 +1,12 @@
-# README
+TourBooking
+============
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## This is a proof of concept Rails 5 app built using TDD.
 
-Things you may want to cover:
+## Installation Instructions
 
-* Ruby version
+Installation is easy; to install, clone the project, create databases referenced in config/database.yml, update global variables in /config/application.rb, install dependencies with `bundle install`, and run the server with `rails server` to start the project with the development environment.  In production, you may want to configure an ActionMailer gateway.
 
-* System dependencies
+## Testing
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run specs by using `rake test`.

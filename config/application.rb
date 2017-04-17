@@ -13,7 +13,7 @@ module TourBooking
     # -- all .rb files in that directory are automatically loaded.
 
     PROPERTY_NAME = "Serene Lakes"
-    USERMAILER_FROM_ADDRESS = "info@propertytours.com"
-    TOUR_AGENT_EMAIL = "ryanmcadler@gmail.com"
+    USERMAILER_FROM_ADDRESS = "info@serenelakes.com"
+    TOUR_AGENT_EMAIL = "tours@example.com"
   end
 end
